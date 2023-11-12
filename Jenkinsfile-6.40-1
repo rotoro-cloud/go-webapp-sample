@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('test') {
             steps {
+                sh 'apk add build-base'
                 git 'https://github.com/rotoro-cloud/go-webapp-sample.git'
                 sh 'go test ./...'
                 sh 'go version'
