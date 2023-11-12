@@ -5,8 +5,8 @@ pipeline {
     stages {
         stage('test') {
             steps {
-        			sh 'go version'
-        			sh 'curl --version'
+                sh 'go version'
+                sh 'curl --version'
             }
         }
     }
