@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+        GOCACHE="${WORKSPACE}" 
+    }
     agent {
         docker { image 'golang:1.19-alpine' }
     }
