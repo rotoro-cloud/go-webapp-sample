@@ -1,9 +1,12 @@
 pipeline {
-    environment {
-        GOCACHE="${WORKSPACE}" 
-    }
+//    environment {
+//        GOCACHE="${WORKSPACE}" 
+//    }
     agent {
-        docker { image 'golang:1.19-alpine' }
+        docker { 
+            image 'golang:1.19-alpine' 
+            args '-u root:root'
+        }
     }
     stages {
         stage('test') {
