@@ -1,10 +1,14 @@
 pipeline {
     agent {
-        docker { image 'golang:1.19-alpine' }
+        docker { 
+            image 'golang:1.19-alpine' 
+            args '-u root:root'
+        }
     }
     stages {
         stage('test') {
             steps {
+                sh 'apk add build-base'
                 git 'https://github.com/rotoro-cloud/go-webapp-sample.git'
                 sh 'go test ./...'
                 sh 'go version'
