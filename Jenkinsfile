@@ -1,10 +1,5 @@
 pipeline {
   agent any
-
-  tools {
-    go 'go-1.20'
-  }
-  
   stages {
     stage('test') {
       steps {
@@ -14,7 +9,7 @@ pipeline {
     }
 
   }
-  environment {
-    GO111MODULE = 'on'
+  tools {
+    go 'go-1.20'
   }
 }
