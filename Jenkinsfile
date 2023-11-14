@@ -18,4 +18,7 @@ pipeline {
   tools {
     go 'go-1.20'
   }
+  environment {
+    GO111MODULE = 'on'
+  }
 }
