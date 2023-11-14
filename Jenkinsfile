@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('dev') {
+    stage('test') {
       steps {
-        echo 'ok'
+        sh 'go test ./...'
       }
     }
 
