@@ -12,6 +12,6 @@ pipeline {
     GO111MODULE = 'on'
   }
   tools {
-    go 'go-1.20'
+    go 'go-1.19'
   }
 }
