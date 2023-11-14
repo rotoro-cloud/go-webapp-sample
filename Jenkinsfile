@@ -8,6 +8,12 @@ pipeline {
       }
     }
 
+    stage('build') {
+      steps {
+        echo 'ok'
+      }
+    }
+
   }
   tools {
     go 'go-1.20'
