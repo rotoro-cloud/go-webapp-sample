@@ -7,18 +7,11 @@ pipeline {
         sh 'go test ./...'
       }
     }
-
-    stage('build') {
-      steps {
-        echo 'ok'
-      }
-    }
-
-  }
-  tools {
-    go 'go-1.20'
   }
   environment {
     GO111MODULE = 'on'
+  }
+  tools {
+    go 'go-1.20'
   }
 }
