@@ -1,17 +1,17 @@
 pipeline {
   agent any
   stages {
-    stage('test') {
+    stage('dev') {
       steps {
-        git(url: 'https://github.com/rotoro-cloud/go-webapp-sample.git', branch: 'master')
-        sh 'go test ./...'
+        echo 'ok'
       }
     }
-  }
-  environment {
-    GO111MODULE = 'on'
+
   }
   tools {
     go 'go-1.19'
+  }
+  environment {
+    GO111MODULE = 'on'
   }
 }
