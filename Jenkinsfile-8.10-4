@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('first') {
             environment {
-                KEY_TYPE = "rsa"
+                KEY_TYPE = "ed25519"
             }
             steps {
                 echo "The key type is ${KEY_TYPE}"
