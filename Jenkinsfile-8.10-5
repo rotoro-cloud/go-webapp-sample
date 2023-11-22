@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage('first') {
+            environment {
+                CRED = credentials("cred_id")
+            }
+            steps {
+                echo "The username is ${CRED_USR}"
+                echo "The password is ${CRED_PSW}"
+            }
+        }
+    }
+}
