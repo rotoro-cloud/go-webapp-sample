@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+
+
+    stages {
+        stage('first') {
+            steps {
+                echo "The key type is ${KEY_TYPE}"
+            }
+        }
+        stage('second') {
+            environment {
+                KEY_TYPE = "ed25519"
+            }		
+            steps {
+                echo "The key type is ${KEY_TYPE}"
+            }
+        }
+    }
+}
