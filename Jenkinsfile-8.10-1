@@ -1,0 +1,21 @@
+def cipher_suite = "TLS_AES_256_GCM_SHA384"
+pipeline {
+    agent any
+    stages {
+        stage('first') {
+            steps {
+                script {
+                    echo cipher_suite
+                    cipher_suite = "TLS_CHACHA20_POLY1305_SHA256"
+                }
+            }
+        }
+        stage('second') {
+            steps {
+                script {
+                    echo cipher_suite
+                }
+            }
+        }
+    }
+}
