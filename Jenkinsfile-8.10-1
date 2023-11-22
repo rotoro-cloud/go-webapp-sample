@@ -15,6 +15,7 @@ pipeline {
                 script {
                     echo cipher_suite
                 }
+                echo "The PATH is ${PATH}"
             }
         }
     }
