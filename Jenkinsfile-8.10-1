@@ -14,6 +14,7 @@ pipeline {
             steps {
                 script {
                     echo cipher_suite
+                    echo "The PATH is ${PATH}"
                 }
                 echo "The PATH is ${PATH}"
             }
