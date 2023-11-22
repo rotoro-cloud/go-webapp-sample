@@ -2,6 +2,14 @@ def cipher_suite = "TLS_AES_256_GCM_SHA384"
 pipeline {
     agent any
     stages {
+        stage('zero') {
+            steps {
+                script {
+                    echo "The PATH is ${PATH}"
+                }
+                echo "The PATH is ${PATH}"
+            }
+        }
         stage('first') {
             steps {
                 script {
@@ -14,9 +22,7 @@ pipeline {
             steps {
                 script {
                     echo cipher_suite
-                    echo "The PATH is ${PATH}"
                 }
-                echo "The PATH is ${PATH}"
             }
         }
     }
