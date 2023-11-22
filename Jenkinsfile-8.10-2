@@ -8,10 +8,11 @@ pipeline {
             steps {
                 echo "The key type is ${KEY_TYPE}"
             }
-    }
-    stage('second') {
-        steps {
-            echo "The key type is ${KEY_TYPE}"
+        }
+        stage('second') {
+            steps {
+                echo "The key type is ${KEY_TYPE}"
+            }
         }
     }
 }
