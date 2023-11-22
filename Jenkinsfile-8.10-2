@@ -7,7 +7,6 @@ pipeline {
         stage('first') {
             steps {
                 echo "The key type is ${KEY_TYPE}"
-                echo "The PATH is ${PATH}"
             }
         }
         stage('second') {
