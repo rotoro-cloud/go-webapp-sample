@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    environment {
+        KEY_TYPE = "rsa"
+    }
+    stages {
+        stage('first') {
+            steps {
+                echo "The key type is ${KEY_TYPE}"
+            }
+    }
+    stage('second') {
+        steps {
+            echo "The key type is ${KEY_TYPE}"
+        }
+    }
+}
