@@ -10,7 +10,7 @@ pipeline {
                 }
             }
             post {
-                always {
+                failure {
                     echo 'Stage is failure, but we go on.'
                 }
             }
