@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('first') {
             steps {
-                error ("Just Error")
+                sh "free"
             }
         }
         stage('second') {
