@@ -6,12 +6,14 @@ pipeline {
     stages {
         stage('first') {
             steps {
-                sh "free"
+                sh "echo Now: \$(date '+%Y-%m-%d %H:%M:%S')"
+                sleep 1
             }
         }
         stage('second') {
             steps {
                 sh "echo Now: \$(date '+%Y-%m-%d %H:%M:%S')"
+                sleep 1
             }
         }
     }
