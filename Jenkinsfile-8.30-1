@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('first') {
             steps {
-                sh "echo Now: $(date '+%Y-%m-%d %H:%M:%S')"
+                sh "echo Now: \$(date '+%Y-%m-%d %H:%M:%S')"
             }
         }
         stage('second') {
             steps {
-                sh "echo Now: $(date '+%Y-%m-%d %H:%M:%S')"
+                sh "echo Now: \$(date '+%Y-%m-%d %H:%M:%S')"
             }
         }
     }
