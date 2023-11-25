@@ -32,17 +32,17 @@ pipeline {
                 }
                 stage("linux") {
                     agent {
-                        label "linux"
+                        label 'ubuntu-agent01'
                     }
                     stages {
                         stage("build") {
                             steps {
-                                sh "./run-build.sh"
+                                sh "echo './run-build.sh'"
                             }
                         }
                         stage("deploy") {
                              steps {
-                                sh "./run-deploy.sh"
+                                sh "echo './run-deploy.sh'"
                             }
                         }
                     }
