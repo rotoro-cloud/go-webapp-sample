@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    options {
+        retry(3)
+    }
+    stages {
+        stage('first') {
+            steps {
+                error ("Just Error")
+            }
+        }
+        stage('second') {
+            steps {
+                sh "echo Now: \$(date '+%Y-%m-%d %H:%M:%S')"
+            }
+        }
+    }
+}
