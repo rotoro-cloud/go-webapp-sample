@@ -3,19 +3,15 @@ pipeline {
     options {
         retry(3)
     }
-
     stages {
         stage('first') {
-    options {
-        retry(3)
-    }
             steps {
-                sh "echo Now: \$(date '+%Y-%m-%d %H:%M:%S')"
+                echo 'Now'
             }
         }
         stage('second') {
             steps {
-                sh "echo Now: \$(date '+%Y-%m-%d %H:%M:%S')"
+                echo 'Now'
             }
         }
     }
