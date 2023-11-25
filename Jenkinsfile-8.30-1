@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    options {
-        retry(3)
-    }
     stages {
+        options {
+            retry(3)
+        }
         stage('first') {
             steps {
                 sh "echo Now: \$(date '+%Y-%m-%d %H:%M:%S')"
