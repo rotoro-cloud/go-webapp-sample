@@ -15,6 +15,7 @@ pipeline {
             }
         }
         stage('second') {
+            agent any
             steps {
                 sh "echo Now: \$(date '+%Y-%m-%d %H:%M:%S')"
             }
