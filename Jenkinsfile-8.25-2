@@ -32,6 +32,7 @@ agent none
                 label 'ubuntu-agent01'
             }
             steps {
+                unstash "build and test the project"
                 sh "cat artifacts/tests.log"
             }
         }
