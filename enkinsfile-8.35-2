@@ -1,0 +1,21 @@
+pipeline {
+    agent none
+    stages {
+        stage('first') {
+            agent any
+            input {
+                message "Please input fields below"
+                ok "Submit"
+                parameters {
+                    string defaultValue: 'Phoenix', description: 'Input the project ID', name: 'project_id'
+                    choice choices: ['1.0', '1.1', '1.2'], description: 'Select the version', name: 'project_version'
+                }
+            }
+            steps {
+                sleep 10
+                echo "project is ${params.project_id}"
+                echo "version is ${params.project_version}"
+            }
+        }
+    }
+}
