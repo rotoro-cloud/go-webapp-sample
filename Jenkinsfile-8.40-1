@@ -1,0 +1,11 @@
+@Library('custom-docker-lib') _
+pipeline {
+    agent any
+    stages {
+        stage('pull') {
+            steps {
+                dockerPull('log-generator', 'rotorocloud')
+            }
+        }
+    }
+}
