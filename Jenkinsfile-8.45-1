@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+    environment {
+        access = 'granted'
+    }
+    stages {
+        stage('first') {
+	        when {
+		        environment name: 'access', value: 'granted'
+    		}
+            steps {
+                echo "Just completed the first stage"
+            }
+        }
+    }
+}
