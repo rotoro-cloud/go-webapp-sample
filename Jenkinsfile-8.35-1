@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    parameters {
+        string defaultValue: 'Phoenix', description: 'Input the project ID', name: 'project_id'
+        choice choices: ['1.0', '1.1', '1.2'], description: 'Select the version', name: 'project_version'
+        booleanParam description: 'Become the root?', name: 'user_become'
+        password defaultValue: '', description: 'Input your password', name: 'user_password'
+    }
+    stages {
+        stage('first') {
+            steps {
+                echo "project is ${params.project_id}"
+                echo "version is ${params.project_version}"
+            }
+        }
+    }
+}
