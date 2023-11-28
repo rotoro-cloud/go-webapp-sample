@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    parameters {
+        string defaultValue: 'Moscow', description: 'Input the project timezone', name: 'TZ'
+    }
+    stages {
+        stage('check') {
+            steps {
+                script {
+                    git 'https://github.com/rotoro-cloud/go-webapp-sample.git'
+                    if(params.TZ == 'Moscow' && fileExists("Dockerfile")) {
+                        echo 'Your project timezone is UTC+3:00'
+                    }
+                    else {
+                        echo 'Not Supported or Dockerfile not exists'
+                    }
+                }
+            }
+        }
+    }
+}
