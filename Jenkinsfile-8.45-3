@@ -7,8 +7,10 @@ pipeline {
         stage('first') {
             when {
                 not {
-                    environment name: 'access', value: 'granted'
-                    branch: 'main'
+                    allOf {
+                        environment name: 'access', value: 'granted'
+                        branch: 'main'
+                    }
                 }
             }
             steps {
