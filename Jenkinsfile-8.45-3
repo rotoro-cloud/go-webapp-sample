@@ -9,7 +9,7 @@ pipeline {
                 not {
                     allOf {
                         environment name: 'access', value: 'granted'
-                        branch: 'master'
+                        branch 'master'
                     }
                 }
             }
