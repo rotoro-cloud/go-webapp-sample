@@ -5,11 +5,11 @@ pipeline {
     }
     stages {
         stage('first') {
-	        when {
-		        environment name: 'access', value: 'granted'
-    		}
+            when {
+                environment name: 'access', value: 'granted'
+            }
             steps {
-                echo "Just completed the first stage"
+                echo "Just completed the first stage with ${env.access}"
             }
         }
     }
