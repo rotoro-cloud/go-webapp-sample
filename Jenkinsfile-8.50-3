@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    environment {
+        TZ='Tokyo'
+    }
+    stages {
+        stage('check') {
+            steps {
+                script {
+                    if(env.TZ == 'Moscow') {
+                        echo 'Your timezone is UTC+3:00'
+                    }
+                    else {
+                        try {
+                            sh "prepare_new_tz.sh"
+                        }
+                        catch(e) {
+                            echo "Error with the new TZ creation"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
