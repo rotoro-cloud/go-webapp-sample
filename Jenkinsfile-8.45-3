@@ -14,7 +14,7 @@ pipeline {
                 }
             }
             steps {
-                echo "Just completed the first stage"
+                echo "Just completed the first stage in ${env.BRANCH_NAME} ${BRANCH_NAME}"
             }
         }
     }
