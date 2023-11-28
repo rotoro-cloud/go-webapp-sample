@@ -11,7 +11,7 @@ pipeline {
             agent any
             when {
                 beforeInput true
-                branch 'jenkinsfiles'
+                branch 'production'
             }
             input {
                 message "Deploy to production?"
