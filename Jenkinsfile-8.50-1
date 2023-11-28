@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    environment {
+        TZ='Moscow'
+    }
+    stages {
+        stage('check') {
+            steps {
+                script {
+                    if(env.TZ == 'Moscow') {
+                        echo 'Your timezone is UTC+3:00'
+                    }
+                    else {
+                        echo 'Not Supported'
+                    }
+                }
+            }
+        }
+    }
+}
