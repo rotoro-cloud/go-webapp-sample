@@ -9,11 +9,15 @@ pipeline {
     stages {
 
         stage('Git') {
-          agent any
-          steps {
-            echo "Bring the Code"
-            git([url: "${REPO_URL}", branch: "main", credentialsId: "gitea-max"])
-          }
+            agent any
+            steps {
+                echo "Bring the Code"
+                git([url: "${REPO_URL}", branch: "main", credentialsId: "gitea-max"])
+                script {
+                    env.TAG = sh(script: "cat package.json | jq -r .version", returnStdout: true).trim()
+                    env.COMMIT = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
+                }
+            }
         }
     }
 }
