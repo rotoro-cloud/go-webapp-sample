@@ -4,7 +4,7 @@ pipeline {
         REPO_SCHEME = "http://"
         REPO_ADDRESS = "git-server:3000/max/web-app.git"
         REPO_URL = "${REPO_SCHEME}${REPO_ADDRESS}"
-        IMAGE_NAME = "myprivateregistry.com/node-app"
+        IMAGE_NAME = "myprivateregistry.com:5000/node-app"
     }
     stages {
 
