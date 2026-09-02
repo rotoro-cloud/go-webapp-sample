@@ -36,9 +36,9 @@ There are 2 methods for starting server.
     ```
 1. When startup is complete, the console shows the following message:
     ```
-    http server started on [::]:8080
+    http server started on [::]:8000
     ```
-1. Access [http://localhost:8080](http://localhost:8080) in your browser.
+1. Access [http://localhost:8000](http://localhost:8000) in your browser.
 1. Login with the following username and password.
     - username : ``test``
     - password : ``test``
@@ -51,9 +51,9 @@ There are 2 methods for starting server.
     ```
 1. When startup is complete, the console shows the following message:
     ```
-    http server started on [::]:8080
+    http server started on [::]:8000
     ```
-1. Access [http://localhost:8080/api/health](http://localhost:8080/api/health) in your browser and confirm that this application has started.
+1. Access [http://localhost:8000/api/health](http://localhost:8000/api/health) in your browser and confirm that this application has started.
     ```
     healthy
     ```
@@ -85,11 +85,11 @@ There are 2 methods for starting server.
     ```bash
     docker build -t go-webapp-sample .
     ```
-2. command to start the container at port 8080
+2. command to start the container at port 8000
     ```bash
-    docker run --name app -p 8080:8080 go-webapp-sample
+    docker run --name app -p 8000:8000 go-webapp-sample
     ``` 
-3. Access [http://localhost:8000](http://localhost:8080) in your browser.
+3. Access [http://localhost:8000](http://localhost:8000) in your browser.
 4. Login with the following username and password.
     - username : ``test``
     - password : ``test`` 
@@ -100,7 +100,7 @@ Swagger isn't enabled on the another environments in default.
 
 ### Accessing to Swagger
 1. Start this application according to the 'Starting Application Server' section.
-2. Access [http://localhost:8080/swagger/index.html](http://localhost:8080/swagger/index.html) in your browser.
+2. Access [http://localhost:8000/swagger/index.html](http://localhost:8000/swagger/index.html) in your browser.
 
 ### Updating the existing Swagger document
 1. Update some comments of some controllers.
