@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  environment {
+    GO111MODULE = 'on'
+    GOROOT='/usr/local/go'
+  }
   stages {
     stage('test') {
       steps {
@@ -7,8 +11,5 @@ pipeline {
       }
     }
   }
-  environment {
-    GO111MODULE = 'on'
-    GOROOT='/usr/local/go'
-  }
+
 }
