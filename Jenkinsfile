@@ -9,5 +9,6 @@ pipeline {
   }
   environment {
     GO111MODULE = 'on'
+    GOROOT='/usr/local/go'
   }
 }
